@@ -33,16 +33,15 @@
     self.mySearchDisplayController
     = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar
                                         contentsController:self];
-    
 }
 
 -(void)viewDidLayoutSubviews
 {
-    const CGFloat kDefaultStatusBarHeight = 20.0;
+    CGFloat statusBarHeight = self.topLayoutGuide.length;
     const CGFloat kBarHeight = 44.0;
     
     self.searchBar.frame = CGRectMake(0.0,
-                                      kDefaultStatusBarHeight,
+                                      statusBarHeight,
                                       CGRectGetWidth(self.view.bounds),
                                       kBarHeight
                                       );
