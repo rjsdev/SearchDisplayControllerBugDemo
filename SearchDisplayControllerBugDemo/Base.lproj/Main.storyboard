@@ -24,12 +24,22 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="RK7-xI-Gec"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-JO-Ih2">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="qID-dT-QtA"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Cf3-9n-bNY" firstAttribute="top" secondItem="jgk-JO-Ih2" secondAttribute="bottom" id="0Lc-dD-eXh"/>
                             <constraint firstItem="juP-an-Hu8" firstAttribute="top" secondItem="xIh-e5-kG8" secondAttribute="bottom" id="8dl-sF-rNp"/>
+                            <constraint firstItem="jgk-JO-Ih2" firstAttribute="leading" secondItem="juP-an-Hu8" secondAttribute="leading" id="COg-XZ-OQb"/>
                             <constraint firstItem="juP-an-Hu8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KXA-zC-DIZ"/>
                             <constraint firstAttribute="trailing" secondItem="juP-an-Hu8" secondAttribute="trailing" id="nVL-1V-TIc"/>
+                            <constraint firstItem="jgk-JO-Ih2" firstAttribute="trailing" secondItem="juP-an-Hu8" secondAttribute="trailing" id="yLm-II-jry"/>
                         </constraints>
                     </view>
                     <connections>

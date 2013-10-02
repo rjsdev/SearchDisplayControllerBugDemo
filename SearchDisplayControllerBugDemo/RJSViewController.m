@@ -20,25 +20,10 @@
 {
     [super viewDidLoad];
 
-    self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:self.toolbar];
-    
     // Comment out the following statement to extend search bar under status bar, as expected
     self.mySearchDisplayController
     = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar
                                         contentsController:self];
-}
-
--(void)viewDidLayoutSubviews
-{
-    CGFloat statusBarHeight = self.topLayoutGuide.length;
-    const CGFloat kBarHeight = 44.0;
-    
-    self.toolbar.frame = CGRectMake(0.0,
-                                    CGRectGetHeight(self.view.bounds) - kBarHeight,
-                                    CGRectGetWidth(self.view.bounds),
-                                    kBarHeight
-                                    );
 }
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar
