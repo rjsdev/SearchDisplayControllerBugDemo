@@ -8,7 +8,10 @@
 
 #import "RJSViewController.h"
 
-@interface RJSViewController ()
+@interface RJSViewController () <UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar * searchBar;
+@property (nonatomic, strong) UISearchDisplayController * mySearchDisplayController;
 
 @end
 
@@ -17,13 +20,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
+    self.searchBar.delegate = self;
+    [self.view addSubview:self.searchBar];
+    
+//    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    //        UIViewController * vanillaViewController = [[UIViewController alloc] init];
+    //        vanillaViewController.edgesForExtendedLayout = UIRectEdgeNone;
+    //
+    //        RJSNavigationSearchDisplayController * newSearchDisplayController =
+    //        [[[RJSNavigationSearchDisplayController alloc] initWithSearchBar:self.searchBar
+    //                                                      contentsController:vanillaViewController] autorelease];
+    
+//    RJSNavigationSearchDisplayController * newSearchDisplayController =
+//    [[[RJSNavigationSearchDisplayController alloc] initWithSearchBar:self.searchBar
+//                                                  contentsController:self] autorelease];
+    
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidLayoutSubviews
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.searchBar.frame = CGRectMake(0.0,
+                                      20.0,
+                                      CGRectGetWidth(self.view.bounds),
+                                      44.0
+                                      );
+}
+
+- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar
+{
+    UIBarPosition result = UIBarPositionTopAttached;
+    
+    if ( bar == self.searchBar )
+    {
+        result = UIBarPositionTopAttached;
+    }
+    
+    return result;
 }
 
 @end
