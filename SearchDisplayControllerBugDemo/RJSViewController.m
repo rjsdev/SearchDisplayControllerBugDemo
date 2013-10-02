@@ -25,18 +25,10 @@
     self.searchBar.delegate = self;
     [self.view addSubview:self.searchBar];
     
-//    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    
-    //        UIViewController * vanillaViewController = [[UIViewController alloc] init];
-    //        vanillaViewController.edgesForExtendedLayout = UIRectEdgeNone;
-    //
-    //        RJSNavigationSearchDisplayController * newSearchDisplayController =
-    //        [[[RJSNavigationSearchDisplayController alloc] initWithSearchBar:self.searchBar
-    //                                                      contentsController:vanillaViewController] autorelease];
-    
-//    RJSNavigationSearchDisplayController * newSearchDisplayController =
-//    [[[RJSNavigationSearchDisplayController alloc] initWithSearchBar:self.searchBar
-//                                                  contentsController:self] autorelease];
+    // Comment out the following statement to extend search bar under status bar, as expected
+    self.mySearchDisplayController
+    = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar
+                                        contentsController:self];
     
 }
 
