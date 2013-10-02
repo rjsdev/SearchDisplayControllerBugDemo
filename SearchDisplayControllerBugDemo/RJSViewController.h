@@ -10,4 +10,7 @@
 
 @interface RJSViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UISearchBar * searchBar;
+@property (nonatomic, strong) IBOutlet UIToolbar * toolbar;
+
 @end

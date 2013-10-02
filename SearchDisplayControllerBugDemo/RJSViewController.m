@@ -10,8 +10,6 @@
 
 @interface RJSViewController () <UISearchBarDelegate>
 
-@property (nonatomic, strong) UISearchBar * searchBar;
-@property (nonatomic, strong) UIToolbar * toolbar;
 @property (nonatomic, strong) UISearchDisplayController * mySearchDisplayController;
 
 @end
@@ -22,10 +20,6 @@
 {
     [super viewDidLoad];
 
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-    self.searchBar.delegate = self;
-    [self.view addSubview:self.searchBar];
-    
     self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.toolbar];
     
@@ -40,12 +34,6 @@
     CGFloat statusBarHeight = self.topLayoutGuide.length;
     const CGFloat kBarHeight = 44.0;
     
-    self.searchBar.frame = CGRectMake(0.0,
-                                      statusBarHeight,
-                                      CGRectGetWidth(self.view.bounds),
-                                      kBarHeight
-                                      );
-
     self.toolbar.frame = CGRectMake(0.0,
                                     CGRectGetHeight(self.view.bounds) - kBarHeight,
                                     CGRectGetWidth(self.view.bounds),
